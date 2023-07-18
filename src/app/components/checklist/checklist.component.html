@@ -1,1 +1,6 @@
-<p>checklist works!</p>
+<app-checklist-item
+    *ngFor="let checkpoint of checkpoints"
+    [checkpoint]="checkpoint"
+    (checked)="onCheckboxChange(checkpoint)"
+    (deleted)="deleteCheckpoint(checkpoint)"
+></app-checklist-item>

@@ -1,1 +1,12 @@
-<p>checklist-item works!</p>
+
+
+
+<mat-checkbox
+  [checked]="checkpoint?.isChecked"
+  (change)="onCheckboxChange()"
+  color="primary"
+>
+  {{ checkpoint?.name }}
+</mat-checkbox>
+
+<mat-icon (click)="deleteItem()">delete</mat-icon>

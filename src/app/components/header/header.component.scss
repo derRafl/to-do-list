@@ -5,6 +5,44 @@
   right: 0;
   left: 0;
   height: 72px;
-  background-color: white;
-  box-shadow: 0 2px 4px #0003;
+  background-color: var(--background);
+  box-shadow: 0 2px 4px var(--colorL);
+  display: flex;
 }
+
+.header {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  spacer{
+  flex: 1;
+}
+
+.toggle {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  
+  mat-icon {
+    margin: 5px;
+  }
+}
+}
+
+.title {
+  mat-icon{
+    transform: scale(2);
+    margin-right: 10px;
+  }
+
+  h1 {
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 0 20px;
+}
+}
+
+
+

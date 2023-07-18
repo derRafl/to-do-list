@@ -1,0 +1,57 @@
+:host {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 20px 20px 0;
+
+    .listEntry {
+        display: flex;
+        flex-direction: column;
+        padding: 6px 20px;
+        border-top: 1px solid Var(--text);
+
+        .row {
+            display: flex;
+            align-items: center;
+
+            mat-icon {
+                transition: transform 180ms ease;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+        }
+
+        .detailContent {
+            overflow: hidden;
+
+            div {
+                padding-top: 6px;
+                margin-top: 6px;
+                border-top: 1px solid var(--text);
+            }
+        }
+    }
+}
+
+.header {
+    input {
+        margin-right: 1.5em;
+        padding: 0.75em;
+        border: 1px solid var(--colorL);
+        background-color: var(--background);
+        color: var(--text);
+        border-radius: 4px;
+        margin: 1em;
+    }
+
+    input::placeholder {
+        color: var(--text);
+    }
+
+    button {
+        color: var(--text);
+        border-color: var(--colorL);
+        
+    }
+}

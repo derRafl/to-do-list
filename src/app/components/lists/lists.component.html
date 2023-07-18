@@ -1,0 +1,32 @@
+
+<div class="header">
+    <input type="text" 
+        [(ngModel)]="newListnameInput"
+        placeholder="Write you list name here!"
+        (keydown.enter)="addList()"
+        >
+
+    <button mat-stroked-button
+        (click)="addList()"
+        [disabled]="newListnameInput === ''"
+    >
+    <mat-icon>add</mat-icon>add</button>
+</div>
+
+
+<div *ngFor="let list of (lists$ | async)" class="listEntry">
+    
+    <div class="row">
+        <mat-icon (click)="deleteList(list)">delete</mat-icon>
+        <span style="cursor: pointer;" (click)="onListClick(list)">{{ list.name }}</span>
+        <mat-icon [style.transform]="list.isExpanded ? 'rotate(180deg)' : null" (click)="toggleExpanded(list)">keyboard_arrow_down</mat-icon>
+    </div>
+
+    <div [@slide]="list.isExpanded ? 'open' : 'close'" class="detailContent">
+        <div *ngFor="let checkpoint of list.checkpoints">
+            {{ checkpoint.name }}
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

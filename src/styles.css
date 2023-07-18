@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #303030;
+    --text:   	  #ffffff;
+    --shadow:     #222222;
+    --colorD:     #343640;
+    --colorL:     #c0c0c0;
+  }
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ffffff;
+    --text:       #000000;
+    --shadow:     #333333;
+    --colorD:     #c0c0c0;
+    --colorL:     #343640;
+  }
+}
+.lightTheme {
+  --background: #ffffff;
+  --text:       #000000;
+  --shadow:     #333333;
+  --colorD:     #c0c0c0;
+  --colorL:     #343640;
+}
+
+.darkTheme {
+  --background: #303030;
+  --text:       #ffffff;
+  --shadow:     #222222;
+  --colorD:     #343640;
+  --colorL:     #c0c0c0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: var(--background);
+}
+
+body,
+h1,
+mat-icon {
+  color: var(--text);
+}
+
+mat-checkbox .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true]) ~ .mdc-checkbox__background {
+  border-color: var(--text) !important;
+}
+mat-checkbox .mdc-form-field label {
+  color: var(--text);
+}/*# sourceMappingURL=styles.css.map */

@@ -1,6 +1,14 @@
 :host {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
   flex: 1;
   display: flex;
+  background-color: var(--background);
+  overflow: auto;
 }
 
 .column {
@@ -8,6 +16,43 @@
   padding: 26px 20px;
 
   &:first-of-type {
-    border-right: 1px solid lightgrey;
+    border-right: 1px solid var(--colorL);
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+
+  input {
+    margin-right: 10px;
+    padding: 0.75em;
+    border: 1px solid var(--colorL);
+    background-color: var(--background);
+    color: var(--text);
+    border-radius: 4px;
+  }
+
+  input::placeholder {
+    color: var(--text);
+  }
+
+  button {
+    color: var(--text);
+    border-color: var(--colorL);
+    margin-right: 20px;
+    text-transform: uppercase;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  h1 {
+    margin: 0.5em;
+    margin-top: 5px;
+    text-transform: uppercase;
+    size: 0.2rem;
+    color: var(--text);
   }
 }

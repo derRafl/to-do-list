@@ -1,0 +1,5 @@
+.mainContainer {
+  display: flex;
+  min-height: calc(100% - 72px);
+  padding-top: 72px;
+}/*# sourceMappingURL=app.component.css.map */

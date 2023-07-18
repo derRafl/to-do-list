@@ -1,7 +1,49 @@
-<div class="column">
-  left side
-</div>
+  <div class="column">
 
-<div class="column">
-  right side
-</div>
+    <div class="header">
+
+      <button mat-stroked-button onclick="history.back()"> 
+        <mat-icon style="transform: rotate(180deg);" >
+          forward
+      </mat-icon>back</button>
+
+      <input type="text"
+        [(ngModel)]="newReminderInput"
+        placeholder="Write you reminder here!"
+        (keydown.enter)="addReminder()"
+      >
+
+      <button mat-stroked-button
+       (click)="addReminder()"
+        [disabled]="newReminderInput === ''"
+        >
+        <mat-icon>add</mat-icon>add</button>
+
+      <div class="spacer"></div>
+      <h1>pending</h1>
+      
+    </div>
+    <hr>
+
+    <app-checklist 
+      [checkpoints]="(onlyNonChecked$ | async) || []"
+      (checkboxChanged)="onCheckboxChange($event)"
+      (deleted)="deleted($event)"
+    ></app-checklist>
+  </div>
+
+  <div class="column">
+
+    <div class="header">
+    <h1>complete</h1>
+    </div>
+
+    <hr>
+    
+    <app-checklist
+      [checkpoints]="(onlyChecked$ | async) || []"
+      (checkboxChanged)="onCheckboxChange($event)"
+      (deleted)="deleted($event)"
+    ></app-checklist>
+  
+  </div>
